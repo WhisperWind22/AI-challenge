@@ -26,8 +26,6 @@ for f in train:
 train.drop(columnsWithOneValue,axis=1,inplace=True)
 
 X_train, y_train = train.drop('target', 1), train['target']
-y_train = y_train.as_matrix()
-Y_train=y_train
 
 scaler = QuantileTransformer(output_distribution='normal')
 X_train=scaler.fit_transform(X_train)
